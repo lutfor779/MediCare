@@ -1,0 +1,30 @@
+.ant-typography {
+    margin-top: .5em !important;
+}
+.bg-img{
+    background: url("https://demo.themefisher.com/novena/images/bg/22.jpg") no-repeat 50% 40%;
+	background-size: cover;
+  	position: relative;
+}
+.bg-color{
+    background-color: #223a66e0;
+}
+
+.bg-img2{    
+    background: url("https://www.zarinastallerdentistry.com/wp-content/uploads/2017/11/patients-banner-O.jpg") no-repeat 50% 55%;
+	background-size: cover;
+  	position: relative;
+}
+.bg-color2{
+    background-color: #223a66d3;
+}
+.bg-img3{   
+    background: url("https://demo.themefisher.com/novena/images/bg/banner.jpg") no-repeat 50% 10%;
+	background-size: cover;
+  	position: relative;
+}
+.bg-img4{   
+    background: url("https://demo.themefisher.com/novena/images/bg/slider-bg-1.jpg") no-repeat 50% 10%;
+	background-size: cover;
+  	position: relative;
+}
