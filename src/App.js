@@ -17,6 +17,7 @@ import Departments from './pages/Departments';
 import Doctors from './pages/Doctors';
 import HomePage from './pages/HomePage';
 import NotFound from './pages/NotFound';
+import Packages from './pages/Packeges';
 import Services from './pages/Services';
 
 function App() {
@@ -52,6 +53,14 @@ function App() {
                             element={
                                 <PrivateRoute>
                                     <Appointment />
+                                </PrivateRoute>
+                            }
+                        />
+                        <Route
+                            path="/packages"
+                            element={
+                                <PrivateRoute>
+                                    <Packages />
                                 </PrivateRoute>
                             }
                         />
