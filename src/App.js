@@ -6,6 +6,7 @@ import PrivateRoute from './components/privateRoute';
 import AuthProvider from './context/AuthProvider';
 import './Global.css';
 import About from './pages/About';
+import AllOrders from './pages/Admin/AllOrders';
 import Appointments from './pages/Admin/Appointments';
 import HandleAdmin from './pages/Admin/HandleAdmin';
 import HandleReviews from './pages/Admin/HandleReviews';
@@ -98,6 +99,14 @@ function App() {
                             element={
                                 <AdminRoute>
                                     <HandleReviews />
+                                </AdminRoute>
+                            }
+                        />
+                        <Route
+                            path="/all-orders"
+                            element={
+                                <AdminRoute>
+                                    <AllOrders />
                                 </AdminRoute>
                             }
                         />
