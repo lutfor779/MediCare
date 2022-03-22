@@ -8,6 +8,7 @@ import {
     InfoCircleOutlined,
     LoginOutlined,
     LogoutOutlined,
+    ShoppingCartOutlined,
     ShoppingOutlined,
     UserOutlined,
 } from '@ant-design/icons';
@@ -69,6 +70,9 @@ const AppMenu = () => {
                     </Menu.Item>
                     <Menu.Item key="appointment" icon={<AimOutlined />}>
                         <Link to="/appointment">Appointment</Link>
+                    </Menu.Item>
+                    <Menu.Item key="orders" icon={<ShoppingCartOutlined />}>
+                        <Link to="/orders">My Dues</Link>
                     </Menu.Item>
                 </Menu>
 
