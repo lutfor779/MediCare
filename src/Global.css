@@ -1,6 +1,17 @@
 .ant-typography {
     margin-top: .5em !important;
 }
+.ant-drawer-body{
+	padding: 0 !important;
+}
+
+.ant-drawer .ant-drawer-content {
+	background-color: #031529 !important;
+}
+
+
+
+/* custom css */
 .bg-img{
     background: url("https://demo.themefisher.com/novena/images/bg/22.jpg") no-repeat 50% 40%;
 	background-size: cover;

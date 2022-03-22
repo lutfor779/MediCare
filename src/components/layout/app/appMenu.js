@@ -25,7 +25,7 @@ const AppMenu = () => {
     return (
         <>
             <Link to="/">
-                <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-extrabold text-green-500 py-4">
+                <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-extrabold text-green-500 py-4 flex justify-center">
                     MediCare
                 </p>
             </Link>

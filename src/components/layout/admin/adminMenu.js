@@ -1,9 +1,10 @@
 import {
     AimOutlined,
+    CommentOutlined,
     HomeOutlined,
-    InfoCircleOutlined,
     LoginOutlined,
     LogoutOutlined,
+    UserSwitchOutlined,
 } from '@ant-design/icons';
 import { Menu } from 'antd';
 import React from 'react';
@@ -20,7 +21,7 @@ const AdminMenu = () => {
     return (
         <>
             <Link to="/">
-                <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-extrabold text-green-500 py-4">
+                <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-extrabold text-green-500 py-4 flex justify-center">
                     MediCare
                 </p>
             </Link>
@@ -43,13 +44,10 @@ const AdminMenu = () => {
                     <Menu.Item key="appointments" icon={<AimOutlined />}>
                         <Link to="/appointments">Appointments</Link>
                     </Menu.Item>
-                    <Menu.Item key="handle-admin" icon={<InfoCircleOutlined />}>
+                    <Menu.Item key="handle-admin" icon={<UserSwitchOutlined />}>
                         <Link to="/handle-admin">Handle Admin</Link>
                     </Menu.Item>
-                    <Menu.Item
-                        key="handle-reviews"
-                        icon={<InfoCircleOutlined />}
-                    >
+                    <Menu.Item key="handle-reviews" icon={<CommentOutlined />}>
                         <Link to="/handle-reviews">Handle Reviews</Link>
                     </Menu.Item>
                 </Menu>
