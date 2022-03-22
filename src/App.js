@@ -16,6 +16,7 @@ import Contact from './pages/Contact';
 import Departments from './pages/Departments';
 import Doctors from './pages/Doctors';
 import HomePage from './pages/HomePage';
+import NotFound from './pages/NotFound';
 import Services from './pages/Services';
 
 function App() {
@@ -63,7 +64,6 @@ function App() {
                             element={
                                 <AdminRoute>
                                     <Appointments />
-                                    {/* <EditableTable /> */}
                                 </AdminRoute>
                             }
                         />
@@ -84,7 +84,7 @@ function App() {
                             }
                         />
 
-                        <Route path="*" element={<h1>Not found</h1>} />
+                        <Route path="*" element={<NotFound />} />
                     </Routes>
                 </BrowserRouter>
             </AuthProvider>
