@@ -1,4 +1,4 @@
-import { Card, Col, Row, Space } from 'antd';
+import { Button, Card, Col, Row, Space } from 'antd';
 import Meta from 'antd/lib/card/Meta';
 import React, { useEffect, useState } from 'react';
 import Banner from '../../components/banners/banner';
@@ -40,6 +40,9 @@ const MyOrders = () => {
                             <div className="my-5">
                                 <p>Bill: {bill}</p>
                             </div>
+                            <Button type="primary" danger ghost>
+                                Request for 25% Discount
+                            </Button>
                         </Card>
                     </Col>
                 </Row>
