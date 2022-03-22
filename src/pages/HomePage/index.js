@@ -22,7 +22,7 @@ const HomePage = () => {
                 <Title level={2}>Our Departments</Title>
                 <OurDepartments />
                 <ServiceBanner />
-                <Title level={2}>Client Says</Title>
+                <Title level={2}>Our Client Says</Title>
                 <Reviews />
             </Space>
         </AppLayout>

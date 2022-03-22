@@ -13,7 +13,7 @@ const Reviews = () => {
     }, []);
 
     return (
-        <div className="mt-8 bg-img2">
+        <div className="bg-img2">
             <Carousel
                 autoplay
                 dots={false}
