@@ -1,22 +1,17 @@
 import {
     AimOutlined,
-    ApartmentOutlined,
-    ContactsOutlined,
-    CrownOutlined,
-    CustomerServiceOutlined,
     HomeOutlined,
     InfoCircleOutlined,
     LoginOutlined,
     LogoutOutlined,
-    UserOutlined,
 } from '@ant-design/icons';
 import { Menu } from 'antd';
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
-const AppMenu = () => {
-    const { admin, user, logOut } = useAuth();
+const AdminMenu = () => {
+    const { user, logOut } = useAuth();
     const location = useLocation();
 
     const data = location.pathname.split('/');
@@ -45,35 +40,21 @@ const AppMenu = () => {
                     <Menu.Item key="home" icon={<HomeOutlined />}>
                         <Link to="/">Home</Link>
                     </Menu.Item>
+                    <Menu.Item key="appointments" icon={<AimOutlined />}>
+                        <Link to="/appointments">Appointments</Link>
+                    </Menu.Item>
+                    <Menu.Item key="handle-admin" icon={<InfoCircleOutlined />}>
+                        <Link to="/handle-admin">Handle Admin</Link>
+                    </Menu.Item>
                     <Menu.Item
-                        key="services"
-                        icon={<CustomerServiceOutlined />}
+                        key="handle-reviews"
+                        icon={<InfoCircleOutlined />}
                     >
-                        <Link to="/services">Services</Link>
-                    </Menu.Item>
-                    <Menu.Item key="about" icon={<InfoCircleOutlined />}>
-                        <Link to="/about">About</Link>
-                    </Menu.Item>
-                    <Menu.Item key="doctors" icon={<UserOutlined />}>
-                        <Link to="/doctors">Doctors</Link>
-                    </Menu.Item>
-                    <Menu.Item key="department" icon={<ApartmentOutlined />}>
-                        <Link to="/department">Departments</Link>
-                    </Menu.Item>
-                    <Menu.Item key="contact" icon={<ContactsOutlined />}>
-                        <Link to="/contact">Contact</Link>
-                    </Menu.Item>
-                    <Menu.Item key="appointment" icon={<AimOutlined />}>
-                        <Link to="/appointment">Appointment</Link>
+                        <Link to="/handle-reviews">Handle Reviews</Link>
                     </Menu.Item>
                 </Menu>
 
                 <Menu theme="dark" mode="inline">
-                    {admin && (
-                        <Menu.Item key="admin" icon={<CrownOutlined />}>
-                            <Link to="/appointments">Admin</Link>
-                        </Menu.Item>
-                    )}
                     {user.email ? (
                         <Menu.Item
                             key="1"
@@ -93,4 +74,4 @@ const AppMenu = () => {
     );
 };
 
-export default AppMenu;
+export default AdminMenu;

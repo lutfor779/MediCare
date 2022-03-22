@@ -125,9 +125,13 @@ const useFirebase = () => {
     }, [auth]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/${user.email}`)
+        setIsLoading(true);
+        fetch(`http://localhost:5000/users/${user.email}`)
             .then((res) => res.json())
-            .then((data) => setAdmin(data.admin));
+            .then((data) =>
+                setAdmin(data.admin).then(() => setIsLoading(false))
+            )
+            .catch(() => setIsLoading(false));
     }, [user.email]);
 
     const logOut = () => {

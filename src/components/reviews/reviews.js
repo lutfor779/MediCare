@@ -19,9 +19,12 @@ const Reviews = () => {
                 dots={false}
                 className="py-12 px-5 lg:px-12 bg-color2"
             >
-                {reviews.map((review) => (
-                    <Review key={review._id} review={review} />
-                ))}
+                {reviews.map(
+                    (review) =>
+                        review.status === 'Approved' && (
+                            <Review key={review._id} review={review} />
+                        )
+                )}
             </Carousel>
         </div>
     );

@@ -147,7 +147,7 @@ const Appointment = () => {
                                 <Select placeholder="Select an option">
                                     {departments.map((data) => (
                                         <Select.Option
-                                            value={data._id}
+                                            value={data.name}
                                             key={data._id}
                                         >
                                             {data.name}

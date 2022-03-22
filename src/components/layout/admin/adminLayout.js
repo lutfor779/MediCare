@@ -4,11 +4,11 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import BreadCrumbContainer from '../../breadCrumb';
 // @ts-ignore
-import AppMenu from './appMenu';
+import AppMenu from './adminMenu';
 
 const { Header, Content, Footer, Sider } = Layout;
 
-const AppLayout = (props) => {
+const AdminLayout = (props) => {
     const [visible, setVisible] = useState(false);
 
     return (
@@ -81,4 +81,4 @@ const AppLayout = (props) => {
     );
 };
 
-export default AppLayout;
+export default AdminLayout;

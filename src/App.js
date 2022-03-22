@@ -1,10 +1,14 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import AdminRoute from './components/adminRoute';
 import Details from './components/details';
 import PrivateRoute from './components/privateRoute';
 import AuthProvider from './context/AuthProvider';
 import './Global.css';
 import About from './pages/About';
+import Appointments from './pages/Admin/Appointments';
+import HandleAdmin from './pages/Admin/HandleAdmin';
+import HandleReviews from './pages/Admin/HandleReviews';
 import Appointment from './pages/Appointment';
 import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
@@ -52,6 +56,34 @@ function App() {
                         />
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/department" element={<Departments />} />
+
+                        {/* admin site */}
+                        <Route
+                            path="/appointments"
+                            element={
+                                <AdminRoute>
+                                    <Appointments />
+                                    {/* <EditableTable /> */}
+                                </AdminRoute>
+                            }
+                        />
+                        <Route
+                            path="/handle-admin"
+                            element={
+                                <AdminRoute>
+                                    <HandleAdmin />
+                                </AdminRoute>
+                            }
+                        />
+                        <Route
+                            path="/handle-reviews"
+                            element={
+                                <AdminRoute>
+                                    <HandleReviews />
+                                </AdminRoute>
+                            }
+                        />
+
                         <Route path="*" element={<h1>Not found</h1>} />
                     </Routes>
                 </BrowserRouter>
