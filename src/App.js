@@ -10,6 +10,7 @@ import AllOrders from './pages/Admin/AllOrders';
 import Appointments from './pages/Admin/Appointments';
 import HandleAdmin from './pages/Admin/HandleAdmin';
 import HandleReviews from './pages/Admin/HandleReviews';
+import HandleUsers from './pages/Admin/HandleUsers';
 import Appointment from './pages/Appointment';
 import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
@@ -107,6 +108,14 @@ function App() {
                             element={
                                 <AdminRoute>
                                     <AllOrders />
+                                </AdminRoute>
+                            }
+                        />
+                        <Route
+                            path="/special-users"
+                            element={
+                                <AdminRoute>
+                                    <HandleUsers />
                                 </AdminRoute>
                             }
                         />

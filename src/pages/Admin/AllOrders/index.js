@@ -24,6 +24,7 @@ const AllOrders = () => {
 
     const handleApproved = (id, current = 'Pending') => {
         const status = current === 'Pending' ? 'Approved' : 'Pending';
+
         fetch(`https://protected-tor-44006.herokuapp.com/orders`, {
             method: 'PUT',
             headers: {
@@ -42,7 +43,7 @@ const AllOrders = () => {
     };
 
     const handleDelete = (id) => {
-        fetch(`https://protected-tor-44006.herokuapp.com/order/${id}`, {
+        fetch(`https://protected-tor-44006.herokuapp.com/orders/${id}`, {
             method: 'DELETE',
         })
             .then((res) => res.json())
@@ -94,11 +95,7 @@ const AllOrders = () => {
                         >
                             <List.Item.Meta
                                 title={item.name}
-                                description={
-                                    <div className="hidden md:block">
-                                        {item.email}
-                                    </div>
-                                }
+                                description={item.email}
                             />
                             <div className="hidden sm:block">
                                 Price: {item.price}

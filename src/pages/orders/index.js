@@ -9,6 +9,7 @@ import useAuth from '../../hooks/useAuth';
 
 const MyOrders = () => {
     let [bill, setBill] = useState(0);
+    const [special, setSpecial] = useState(false);
     const { user } = useAuth();
     const navigate = useNavigate();
 
@@ -21,6 +22,13 @@ const MyOrders = () => {
                 for (let item of data) {
                     setBill((bill += item.price));
                 }
+            });
+
+        fetch(`https://protected-tor-44006.herokuapp.com/special-users`)
+            .then((res) => res.json())
+            .then((data) => {
+                const result = data.find((d) => d.email === user.email);
+                if (result) setSpecial(result.specialUser);
             });
     }, []);
 
@@ -49,6 +57,8 @@ const MyOrders = () => {
             .catch(() => message.error('Some problem occurred'));
     };
 
+    const discount = (bill * 25) / 100;
+
     return (
         <AppLayout>
             <Space direction="vertical" size={45} className="w-full">
@@ -66,15 +76,23 @@ const MyOrders = () => {
                             />
                             <div className="my-5">
                                 <p>Bill: {bill}</p>
+                                {special && (
+                                    <div>
+                                        <p>Discount: {discount}</p>
+                                        <b>Total: {bill - discount}</b>
+                                    </div>
+                                )}
                             </div>
-                            <Button
-                                type="primary"
-                                danger
-                                ghost
-                                onClick={handleRequest}
-                            >
-                                Request for 25% Discount
-                            </Button>
+                            {!special && (
+                                <Button
+                                    type="primary"
+                                    danger
+                                    ghost
+                                    onClick={handleRequest}
+                                >
+                                    Request for 25% Discount
+                                </Button>
+                            )}
                         </Card>
                     </Col>
                 </Row>

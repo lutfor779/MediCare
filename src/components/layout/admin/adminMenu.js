@@ -5,6 +5,7 @@ import {
     LoginOutlined,
     LogoutOutlined,
     ShopOutlined,
+    TeamOutlined,
     UserSwitchOutlined,
 } from '@ant-design/icons';
 import { Menu } from 'antd';
@@ -53,6 +54,9 @@ const AdminMenu = () => {
                     </Menu.Item>
                     <Menu.Item key="all-orders" icon={<ShopOutlined />}>
                         <Link to="/all-orders">All Orders</Link>
+                    </Menu.Item>
+                    <Menu.Item key="special-users" icon={<TeamOutlined />}>
+                        <Link to="/special-users">Handle Users</Link>
                     </Menu.Item>
                 </Menu>
 
