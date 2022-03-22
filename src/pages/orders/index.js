@@ -1,6 +1,7 @@
-import { Button, Card, Col, Row, Space } from 'antd';
+import { Button, Card, Col, message, Row, Space } from 'antd';
 import Meta from 'antd/lib/card/Meta';
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Banner from '../../components/banners/banner';
 import ServiceBanner from '../../components/banners/serviceBanner';
 import AppLayout from '../../components/layout/app/appLayout';
@@ -9,6 +10,7 @@ import useAuth from '../../hooks/useAuth';
 const MyOrders = () => {
     let [bill, setBill] = useState(0);
     const { user } = useAuth();
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch(
@@ -21,6 +23,31 @@ const MyOrders = () => {
                 }
             });
     }, []);
+
+    const handleRequest = () => {
+        const data = {
+            email: user.email,
+            displayName: user.displayName,
+            specialUser: false,
+            request: true,
+        };
+
+        fetch('https://protected-tor-44006.herokuapp.com/special-users', {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.upsertedCount || data.matchedCount) {
+                    message.success('Request Successfully');
+                    navigate('/');
+                }
+            })
+            .catch(() => message.error('Some problem occurred'));
+    };
 
     return (
         <AppLayout>
@@ -40,7 +67,12 @@ const MyOrders = () => {
                             <div className="my-5">
                                 <p>Bill: {bill}</p>
                             </div>
-                            <Button type="primary" danger ghost>
+                            <Button
+                                type="primary"
+                                danger
+                                ghost
+                                onClick={handleRequest}
+                            >
                                 Request for 25% Discount
                             </Button>
                         </Card>
