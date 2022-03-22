@@ -6,6 +6,7 @@ import { useLocation, useParams } from 'react-router-dom';
 import Banner from './banners/banner';
 import ServiceBanner from './banners/serviceBanner';
 import AppLayout from './layout/app/appLayout';
+import AddReview from './reviews/addReview';
 
 const Details = () => {
     const { id } = useParams();
@@ -56,7 +57,7 @@ const Details = () => {
                         </div>
                     </Col>
                 </Row>
-
+                <AddReview />
                 <ServiceBanner />
             </Space>
         </AppLayout>
