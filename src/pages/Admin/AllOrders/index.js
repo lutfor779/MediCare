@@ -42,7 +42,7 @@ const AllOrders = () => {
     };
 
     const handleDelete = (id) => {
-        fetch(`https://protected-tor-44006.herokuapp.com/orders/${id}`, {
+        fetch(`https://protected-tor-44006.herokuapp.com/order/${id}`, {
             method: 'DELETE',
         })
             .then((res) => res.json())
