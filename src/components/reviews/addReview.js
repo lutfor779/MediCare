@@ -22,7 +22,7 @@ const AddReview = () => {
     const handleSubmit = (values) => {
         setLoading(true);
 
-        fetch('http://localhost:5000/appointments', {
+        fetch('http://localhost:5000/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
