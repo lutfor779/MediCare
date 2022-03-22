@@ -18,7 +18,7 @@ const Details = () => {
     pathName.shift();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/${pathName[0]}/${id}`)
+        fetch(`https://protected-tor-44006.herokuapp.com/${pathName[0]}/${id}`)
             .then((res) => res.json())
             .then((data) => setData(data));
     }, [id, pathName]);

@@ -101,7 +101,7 @@ const Appointments = () => {
     const [changed, setChanged] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/appointments')
+        fetch('https://protected-tor-44006.herokuapp.com/appointments')
             .then((res) => res.json())
             .then((data) => setAppointments(data))
             .catch((err) => console.log(err));
@@ -117,7 +117,7 @@ const Appointments = () => {
 
     const handleApproved = (id, current = 'Pending') => {
         const status = current === 'Pending' ? 'Approved' : 'Pending';
-        fetch(`http://localhost:5000/appointments`, {
+        fetch(`https://protected-tor-44006.herokuapp.com/appointments`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
@@ -135,7 +135,7 @@ const Appointments = () => {
     };
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/appointments/${id}`, {
+        fetch(`https://protected-tor-44006.herokuapp.com/appointments/${id}`, {
             method: 'DELETE',
         })
             .then((res) => res.json())
@@ -152,13 +152,16 @@ const Appointments = () => {
     };
 
     const handleSave = (row) => {
-        fetch(`http://localhost:5000/appointments/${row._id}`, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json',
-            },
-            body: JSON.stringify(row),
-        })
+        fetch(
+            `https://protected-tor-44006.herokuapp.com/appointments/${row._id}`,
+            {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json',
+                },
+                body: JSON.stringify(row),
+            }
+        )
             .then((res) => res.json())
             .then((data) => {
                 if (data.modifiedCount > 0) {

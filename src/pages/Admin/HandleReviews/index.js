@@ -16,7 +16,7 @@ const HandleReviews = () => {
     const [changed, setChanged] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://protected-tor-44006.herokuapp.com/reviews')
             .then((res) => res.json())
             .then((data) => setReviews(data))
             .catch((err) => console.log(err));
@@ -24,7 +24,7 @@ const HandleReviews = () => {
 
     const handleApproved = (id, current = 'Pending') => {
         const status = current === 'Pending' ? 'Approved' : 'Pending';
-        fetch(`http://localhost:5000/reviews`, {
+        fetch(`https://protected-tor-44006.herokuapp.com/reviews`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
@@ -42,7 +42,7 @@ const HandleReviews = () => {
     };
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/reviews/${id}`, {
+        fetch(`https://protected-tor-44006.herokuapp.com/reviews/${id}`, {
             method: 'DELETE',
         })
             .then((res) => res.json())

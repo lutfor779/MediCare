@@ -35,7 +35,7 @@ const Appointment = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('http://localhost:5000/departments')
+        fetch('https://protected-tor-44006.herokuapp.com/departments')
             .then((res) => res.json())
             .then((data) => setDepartments(data))
             .catch((err) => console.log(err));
@@ -44,7 +44,7 @@ const Appointment = () => {
     const handleSubmit = (values) => {
         setLoading(true);
 
-        fetch('http://localhost:5000/appointments', {
+        fetch('https://protected-tor-44006.herokuapp.com/appointments', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

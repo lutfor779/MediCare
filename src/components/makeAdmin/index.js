@@ -8,7 +8,7 @@ const UsersContainer = () => {
     const [changed, setChanged] = useState(false);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users`)
+        fetch(`https://protected-tor-44006.herokuapp.com/users`)
             .then((res) => res.json())
             .then((data) => {
                 setUsers(data);
@@ -23,7 +23,7 @@ const UsersContainer = () => {
         const role = current === 'User' ? 'Admin' : 'User';
         const userData = { email, role };
 
-        fetch(`http://localhost:5000/users/admin`, {
+        fetch(`https://protected-tor-44006.herokuapp.com/users/admin`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

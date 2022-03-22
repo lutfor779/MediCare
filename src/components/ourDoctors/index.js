@@ -6,7 +6,7 @@ const OurDoctors = () => {
     const [doctors, setDoctors] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/doctors')
+        fetch('https://protected-tor-44006.herokuapp.com/doctors')
             .then((res) => res.json())
             .then((data) => setDoctors(data))
             .catch((err) => console.log(err));
