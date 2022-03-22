@@ -15,3 +15,9 @@ Try this after cloning this repo:
 npm i
 npm start
 ```
+
+### Deployment
+
+This site was deployed here [MediCare](https://medi-care-a6f20.web.app/)
+
+Server site code link: [MediCare-Server](https://github.com/lutfor779/MediCare-Server)
